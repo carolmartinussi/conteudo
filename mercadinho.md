@@ -5,15 +5,19 @@ Projeto do Mercadinho
 
 Kandy é dona de um mercadinho que vende doces e guloseimas. Ela gostaria de ter uma forma melhor de controlar a venda dos produtos, e pediu nossa ajuda para isso.
 
+Por conteúdo:
+
 - [Entrada e saída](#entrada-e-saida)
-	- [Escrever no console](#seja-bem-vindoa)
-	- [Variável cadeia (String)](#indicar-um-produto)
-	- [variável real](#preco-do-novo-produto)
-	- [variável inteiro](#estoque-de-bala-arco-iris)
-	- [ler do console](#seja-bem-vindo-joao)
+	- [Seja Bem Vindo(a)!](#seja-bem-vindoa)
+	- [Seja bem vindo(a), João](#seja-bem-vindo-joao)
+	- [Indicar um produto](#indicar-um-produto)
+	- [Preço do novo produto](#preco-do-novo-produto)
+	- [Estoque de bala arco-íris](#estoque-de-bala-arco-iris)
 - [Condições](#condicoes)
-	- [Se](#produto-esgotado)
-	- [Senão](#temos-0-restantes-no-estoque)
+	- [Produto esgotado!](#produto-esgotado)
+	- ["Temos 0 restante(s) no estoque!"?](#temos-0-restantes-no-estoque)
+
+
 
 ## Entrada e saída
 
@@ -22,7 +26,7 @@ Kandy é dona de um mercadinho que vende doces e guloseimas. Ela gostaria de ter
 Kandy gostaria de poder saudar os clientes que entram na sua loja.
 
 ```
-programa 
+programa
 { 
 	funcao inicio () 
 	{
@@ -30,6 +34,27 @@ programa
 	} 
 }
 ```
+
+#### Seja bem vindo(a), João!
+
+As boas vindas fizeram um sucesso com os clientes! Mas mesmo assim, Kandy recebeu algumas reclamações dizendo que o atendimento era muito impessoal. Ela gostaria que fosse possível saudar os clientes com o nome deles.
+
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		cadeia nome
+
+		escreva("Digite seu nome: ")
+		leia(nome)
+
+		escreva("Seja bem vindo(a), ", nome, "!")
+	}
+}
+```
+
 
 #### Indicar um produto
 
@@ -90,27 +115,92 @@ programa
 
 ```
 
-#### Seja bem vindo, João!
+#### Comprar produto
 
-As boas vindas fizeram um sucesso com os clientes! Mas mesmo assim, Kandy recebeu algumas reclamações dizendo que o atendimento era muito impessoal. Ela gostaria que fosse possível saudar os clientes com o nome deles.
-
+Chegou o grande momento! Kandy gostaria que fosse possível oferecer para o cliente comprar balas arco-íris. Precisamos que o cliente consiga dizer que gostaria de comprar uma bala.
 
 ```
 programa
 {
 	funcao inicio ()
 	{
-		cadeia nome
+		cadeia produto = "Bala Arco-íris"
+		real preco = 0.25
+		inteiro quantidade = 20
+		caracter resposta
 
-		escreva("Digite seu nome: ")
-		leia(nome)
+		escreva("Conheça o novo produto ", produto, "!\n")
+		escreva("Apenas R$ ", preco, "\n")
 
-		escreva("Seja bem vindo(a), ", nome, "!")
+		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+		leia(resposta)
 	}
 }
 ```
 
 ## Condições
+
+#### Obrigada por comprar!
+
+Os clientes reclamaram que não recebem nenhuma confirmação de que compraram o produto. Kandy acha que seria bem legal mostrar uma mensagem de "Obrigada por comprar!" quando o produto é comprado.
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		cadeia produto = "Bala Arco-íris"
+		real preco = 0.25
+		inteiro quantidade = 10
+		caracter resposta
+
+		escreva("Conheça o novo produto ", produto, "!\n")
+		escreva("Apenas R$ ", preco, "\n")
+
+		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+		leia(resposta)
+
+		se (resposta == 'S'){
+				escreva("Obrigada por comprar! Volte sempre!")
+		}
+	}
+}
+```
+
+#### Isso dá muito trabalho!
+
+Todas as vezes que um cliente compra uma bala, Kandy tem que mudar o valor da quantidade em estoque. Ela gostaria de saber se é possível que o estoque se atualizasse automaticamente.
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		cadeia produto = "Bala Arco-íris"
+		real preco = 0.25
+		inteiro quantidade = 10
+		caracter resposta
+
+		escreva("Conheça o novo produto ", produto, "!\n")
+		escreva("Apenas R$ ", preco, "\n")
+
+		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+		leia(resposta)
+
+		se (resposta == 'S'){
+				quantidade = quantidade - 1
+				escreva("Obrigada por comprar! Volte sempre!")
+		}
+	}
+}
+```
+
+
+------------------
+
+Editar daqui pra baixo :)
+
+------------------
 
 #### Produto esgotado!
 
@@ -130,6 +220,7 @@ programa
 		escreva("Temos ", quantidade, " restante(s) no estoque!\n")
 		
 		se (quantidade == 0){
+			quantidade = quantidade - 1
 			escreva("Produto esgotado!")
 		}
 	}
@@ -161,4 +252,16 @@ programa
 	}
 }
 ```
+
+#### Eu quero 5 balas!
+
+Uma cliente entrou no mercadinho querendo comprar 5 Balas Arco-íris e teve que usar o sistema 5 vezes! Kandy quer saber se é possível comprar uma quantidade maior do que 1 por vez.
+
+
+
+
+#### Desconto para grandes quantidades
+
+## Ciclos
+
 
