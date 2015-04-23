@@ -76,7 +76,7 @@ programa
 
 #### Preço do novo produto
 
-Agora, todos que entram na loja querem saber o preço do produto novo. Podemos armazenar o preço e mostra-lo junto com o nome?
+Agora, todos que entram na loja querem saber o preço do produto novo. Podemos armazenar o preço e mostrá-lo junto com o nome?
 O preço da Bala Azul é R$ 0,25.
 
 ```
@@ -160,8 +160,8 @@ programa
 		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
 		leia(resposta)
 
-		se (resposta == 'S'){
-				escreva("Obrigada por comprar! Volte sempre!")
+		se (resposta == 'S') {
+			escreva("Obrigada por comprar! Volte sempre!")
 		}
 	}
 }
@@ -187,7 +187,7 @@ programa
 		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
 		leia(resposta)
 
-		se (resposta == 'S'){
+		se (resposta == 'S') {
 				quantidade = quantidade - 1
 				escreva("Obrigada por comprar! Volte sempre!")
 		}
@@ -204,7 +204,7 @@ Editar daqui pra baixo :)
 
 #### Produto esgotado!
 
-O sucesso da Bala Arco-íris foi tão grande que os estoques esgotam muito rápido! Queremos informar os clientes que o produto está esgotado quando a quantidade for 0.
+O sucesso da Bala Arco-íris foi tão grande que os estoques esgotaram muito rápido! Queremos informar os clientes que o produto está esgotado quando a quantidade for 0.
 
 ```
 programa
@@ -219,7 +219,7 @@ programa
 		escreva("Apenas R$ ", preco, "\n")
 		escreva("Temos ", quantidade, " restante(s) no estoque!\n")
 		
-		se (quantidade == 0){
+		se (quantidade == 0) {
 			quantidade = quantidade - 1
 			escreva("Produto esgotado!")
 		}
@@ -243,7 +243,7 @@ programa
 		escreva("Conheça o novo produto ", produto, "!\n")
 		escreva("Apenas R$ ", preco, "\n")
 		
-		se (quantidade == 0){
+		se (quantidade == 0) {
 			escreva("Produto esgotado!")
 		}
 		senao {
