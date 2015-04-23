@@ -55,7 +55,6 @@ programa
 }
 ```
 
-
 #### Indicar um produto
 
 Um novo produto surgiu nas prateleiras e Kandy gostaria de poder indicar para todos que entrassem na loja.
@@ -257,8 +256,83 @@ programa
 
 Uma cliente entrou no mercadinho querendo comprar 5 Balas Arco-íris e teve que usar o sistema 5 vezes! Kandy quer saber se é possível comprar uma quantidade maior do que 1 por vez.
 
+```
+programa
+{
+	funcao inicio ()
+	{
+		cadeia produto = "Bala Arco-íris"
+		real preco = 0.25
+		inteiro quantidade = 10
 
+		escreva("Conheça o novo produto ", produto, "!\n")
+		escreva("Apenas R$ ", preco, "\n")
+		
+		se (quantidade == 0) {
+			escreva("Produto esgotado!")
+		}
+		senao {
+			escreva("Temos ", quantidade, " restante(s) no estoque!\n")
+			
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
 
+			se (resposta == 'S') {
+					escreva("Qual a quantidade desejada? \n")
+					leia(quantidade_desejada)
+
+					quantidade = quantidade - quantidade_desejada
+					escreva("Obrigada por comprar! Volte sempre!")
+			}
+		}
+	}
+}
+```
+
+#### Quantidade no estoque não suficiente
+
+Um outro cliente entrou no mercadinho querendo comprar 12 Balas Arco-íris, mas há apenas 10 balas no estoque. Devemos informar que só é possível vender a quantidade em estoque.
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		cadeia produto = "Bala Arco-íris"
+		real preco = 0.25
+		inteiro quantidade = 10
+
+		escreva("Conheça o novo produto ", produto, "!\n")
+		escreva("Apenas R$ ", preco, "\n")
+		
+		se (quantidade == 0) {
+			escreva("Produto esgotado!")
+		}
+		senao {
+			escreva("Temos ", quantidade, " restante(s) no estoque!\n")
+			
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual a quantidade desejada? \n")
+				leia(quantidade_desejada)
+
+				se (quantidade_desejada > quantidade) {
+					escreva("Só foi possível comprar ", quantidade, " produtos.")
+					quantidade = 0
+				}
+				senao {
+					quantidade = quantidade - quantidade_desejada
+				}
+
+				escreva("Obrigada por comprar! Volte sempre!")
+			}
+		}
+
+	}
+}
+```
 
 #### Desconto para grandes quantidades
 
