@@ -264,6 +264,7 @@ programa
 		cadeia produto = "Bala Arco-íris"
 		real preco = 0.25
 		inteiro quantidade = 10
+		caracter resposta
 
 		escreva("Conheça o novo produto ", produto, "!\n")
 		escreva("Apenas R$ ", preco, "\n")
@@ -279,6 +280,7 @@ programa
 
 			se (resposta == 'S') {
 					escreva("Qual a quantidade desejada? \n")
+					inteiro quantidade_desejada
 					leia(quantidade_desejada)
 
 					quantidade = quantidade - quantidade_desejada
@@ -301,6 +303,7 @@ programa
 		cadeia produto = "Bala Arco-íris"
 		real preco = 0.25
 		inteiro quantidade = 10
+		caracter resposta
 
 		escreva("Conheça o novo produto ", produto, "!\n")
 		escreva("Apenas R$ ", preco, "\n")
@@ -316,6 +319,7 @@ programa
 
 			se (resposta == 'S') {
 				escreva("Qual a quantidade desejada? \n")
+				inteiro quantidade_desejada
 				leia(quantidade_desejada)
 
 				se (quantidade_desejada > quantidade) {
