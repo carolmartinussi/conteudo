@@ -5,8 +5,6 @@ Projeto do Mercadinho
 
 Kandy é dona de um mercadinho que vende doces e guloseimas. Ela gostaria de ter uma forma melhor de controlar a venda dos produtos, e pediu nossa ajuda para isso.
 
-Por conteúdo:
-
 - [Entrada e saída](#entrada-e-saida)
 	- [Seja Bem Vindo(a)!](#seja-bem-vindoa)
 	- [Seja bem vindo(a), João](#seja-bem-vindo-joao)
@@ -14,9 +12,6 @@ Por conteúdo:
 	- [Preço do novo produto](#preco-do-novo-produto)
 	- [Estoque de bala arco-íris](#estoque-de-bala-arco-iris)
 - [Condições](#condicoes)
-	- [Produto esgotado!](#produto-esgotado)
-	- ["Temos 0 restante(s) no estoque!"?](#temos-0-restantes-no-estoque)
-
 
 
 ## Entrada e saída
@@ -130,6 +125,7 @@ programa
 
 		escreva("Conheça o novo produto ", produto, "!\n")
 		escreva("Apenas R$ ", preco, "\n")
+		escreva("Temos ", quantidade, " restante(s) no estoque!")
 
 		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
 		leia(resposta)
@@ -155,6 +151,7 @@ programa
 
 		escreva("Conheça o novo produto ", produto, "!\n")
 		escreva("Apenas R$ ", preco, "\n")
+		escreva("Temos ", quantidade, " restante(s) no estoque!")
 
 		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
 		leia(resposta)
@@ -183,6 +180,8 @@ programa
 		escreva("Conheça o novo produto ", produto, "!\n")
 		escreva("Apenas R$ ", preco, "\n")
 
+		escreva("Temos ", quantidade, " restante(s) no estoque!")
+
 		escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
 		leia(resposta)
 
@@ -194,16 +193,9 @@ programa
 }
 ```
 
-
-------------------
-
-Editar daqui pra baixo :)
-
-------------------
-
 #### Produto esgotado!
 
-O sucesso da Bala Arco-íris foi tão grande que os estoques esgotaram muito rápido! Queremos informar os clientes que o produto está esgotado quando a quantidade for 0.
+O sucesso da Bala Arco-íris foi tão grande que os estoques esgotam muito rápido! Temos que informar quando o produto está esgotado! Ah, e não podemos vender o produto nesses casos.
 
 ```
 programa
@@ -212,41 +204,24 @@ programa
 	{
 		cadeia produto = "Bala Arco-íris"
 		real preco = 0.25
-		inteiro quantidade = 0
+		inteiro quantidade = 10
+		caracter resposta
 
 		escreva("Conheça o novo produto ", produto, "!\n")
 		escreva("Apenas R$ ", preco, "\n")
-		escreva("Temos ", quantidade, " restante(s) no estoque!\n")
-		
-		se (quantidade == 0) {
-			quantidade = quantidade - 1
-			escreva("Produto esgotado!")
-		}
-	}
-}
-```
-
-#### "Temos 0 restante(s) no estoque!"?
-
-Kandy adorou a mensagem de produto esgotado, mas acha que ainda pode melhorar. Ela quer que a quantidade seja exibida apenas quando ainda houver produto em estoque.
-
-```
-programa
-{
-	funcao inicio ()
-	{
-		cadeia produto = "Bala Arco-íris"
-		real preco = 0.25
-		inteiro quantidade = 0
-
-		escreva("Conheça o novo produto ", produto, "!\n")
-		escreva("Apenas R$ ", preco, "\n")
-		
-		se (quantidade == 0) {
+		se (quantidade == 0){
 			escreva("Produto esgotado!")
 		}
 		senao {
-			escreva("Temos ", quantidade, " restante(s) no estoque!\n")
+			escreva("Temos ", quantidade, " restante(s) no estoque!")
+
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S'){
+					quantidade = quantidade - 1
+					escreva("Obrigada por comprar! Volte sempre!")
+			}
 		}
 	}
 }
@@ -337,6 +312,12 @@ programa
 	}
 }
 ```
+
+------------------
+
+Editar daqui pra baixo :)
+
+------------------
 
 #### Desconto para grandes quantidades
 
