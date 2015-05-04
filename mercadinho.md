@@ -382,9 +382,9 @@ programa
 {
 	funcao inicio ()
 	{
-		cadeia produto1 = "Bala Arco-íris"
-		real preco1 = 0.25
-		inteiro quantidade1 = 10
+		cadeia produto = "Bala Arco-íris"
+		real preco = 0.25
+		inteiro quantidade = 10
 
 		cadeia produto2 = "Chiclete-Menta"
 		real preco2 = 0.5
@@ -393,86 +393,98 @@ programa
 		cadeia produto3 = "Bombom-Supresa"
 		real preco3 = 1.0
 		inteiro quantidade3 = 3
-		
+
+		inteiro quantidade_desejada
 		
 		caracter resposta
 
-		escreva("Conheça o produto ", produto1, "!\n")
-		escreva("Apenas R$ ", preco1, "\n")
-
-		escreva("Conheça o produto ", produto2, "!\n")
-		escreva("Apenas R$ ", preco2, "\n")
-
-		escreva("Conheça o produto ", produto3, "!\n")
-		escreva("Apenas R$ ", preco3, "\n")
+		escreva("Conheça o novo produto ", produto, "!\n")
+		escreva("Apenas R$ ", preco, "\n")
 		
-		
-		se (quantidade1 == 0) {
-			escreva("Produto ", produto1, " esgotado!")
+		se (quantidade == 0) {
+			escreva("Produto esgotado!")
 		}
-		se (quantidade2 == 0) {
-			escreva("Produto ", produto2, " esgotado!")
-		}
-		se (quantidade3 == 0) {
-			escreva("Produto ", produto3, " esgotado!")
-		}
-		
 		senao {
-			escreva("Temos ", quantidade1, " ", produto1, " restante(s) no estoque!\n")
-			escreva("Temos ", quantidade2, " ", produto2, " restante(s) no estoque!\n")
-			escreva("Temos ", quantidade3, " ", produto3, " restante(s) no estoque!\n")
+			escreva("Temos ", quantidade, " restante(s) no estoque!\n")
 			
 			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
 			leia(resposta)
 
 			se (resposta == 'S') {
-				escreva("Qual o produto que deseja comprar? \n")
-				escreva("Digite 1, para ", produto1, "\n")
-				escreva("Digite 2, para ", produto2, "\n")
-				escreva("Digite 3, para ", produto3, "\n")
-				inteiro produto_desejado
-				leia(produto_desejado)
-				
 				escreva("Qual a quantidade desejada? \n")
-				inteiro quantidade_desejada
 				leia(quantidade_desejada)
 
-				se (produto_desejado == 1) {
-					se (quantidade_desejada > quantidade1) {
-						escreva("Só foi possível comprar ", quantidade1, " produtos.")
-						quantidade1 = 0
-					}
-					senao {
-					quantidade1 = quantidade1 - quantidade_desejada
-					}		
+				se (quantidade_desejada > quantidade) {
+					escreva("Só foi possível comprar ", quantidade, " produtos.")
+					quantidade = 0
+				}
+				senao {
+					quantidade = quantidade - quantidade_desejada
 				}
 
-				se (produto_desejado == 2) {
-					se (quantidade_desejada > quantidade2) {
-						escreva("Só foi possível comprar ", quantidade2, " produtos.")
-						quantidade2 = 0
-					}
-					senao {
-					quantidade2 = quantidade2 - quantidade_desejada
-					}		
-				}
-
-				se (produto_desejado == 3) {
-					se (quantidade_desejada > quantidade3) {
-						escreva("Só foi possível comprar ", quantidade3, " produtos.")
-						quantidade3 = 0
-					}
-					senao {
-					quantidade3 = quantidade3 - quantidade_desejada
-					}		
-				}
-				
-				
-
-				escreva("Obrigada por comprar! Volte sempre!")
+				escreva("Obrigada por comprar!\n")
 			}
 		}
 
+		
+		escreva("Conheça o novo produto ", produto2, "!\n")
+		escreva("Apenas R$ ", preco2, "\n")
+		
+		se (quantidade2 == 0) {
+			escreva("Produto esgotado!")
+		}
+		senao {
+			escreva("Temos ", quantidade2, " restante(s) no estoque!\n")
+			
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual a quantidade desejada? \n")
+				leia(quantidade_desejada)
+
+				se (quantidade_desejada > quantidade2) {
+					escreva("Só foi possível comprar ", quantidade2, " produtos.")
+					quantidade2 = 0
+				}
+				senao {
+					quantidade2 = quantidade2 - quantidade_desejada
+				}
+
+				escreva("Obrigada por comprar!\n")
+			}
+		}
+
+		
+		escreva("Conheça o novo produto ", produto3, "!\n")
+		escreva("Apenas R$ ", preco3, "\n")
+		
+		se (quantidade3 == 0) {
+			escreva("Produto esgotado!")
+		}
+		senao {
+			escreva("Temos ", quantidade3, " restante(s) no estoque!\n")
+			
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual a quantidade desejada? \n")
+				leia(quantidade_desejada)
+
+				se (quantidade_desejada > quantidade3) {
+					escreva("Só foi possível comprar ", quantidade3, " produtos.")
+					quantidade3 = 0
+				}
+				senao {
+					quantidade3 = quantidade3 - quantidade_desejada
+				}
+
+				escreva("Obrigada por comprar!\n")
+			}
+		}
+
+		escreva("Volte sempre!\n")
 	}
 }
 ```
@@ -595,9 +607,9 @@ programa
 
 ## Loops
 
-#### O programa continua grande
+#### O programa continua enorme!
 
-Temos vários códigos repetidos. E se tivessemos uma forma de repetir um mesmo código várias vezes, com condições diferentes?
+Se olharmos bem, temos vários códigos repetidos. E se tivessemos uma forma de repetir um mesmo código várias vezes, com condições diferentes?
 
 ```
 programa 
