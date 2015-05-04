@@ -313,11 +313,288 @@ programa
 }
 ```
 
-------------------
 
-Editar daqui pra baixo :)
+## Vetores
 
-------------------
+#### Mais produtos!
+
+Kandy está muito feliz com sua loja, porém ela gostaria de vender outros produtos. Ela fez uma pesquisa de mercado com seus clientes e concluiu que eles gostariam de comprar Chiclete-Menta e Bombom-Supresa. Cada produto deve ter um preço e quantidade associados.
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		cadeia produto = "Bala Arco-íris"
+		real preco = 0.25
+		inteiro quantidade = 10
+
+		cadeia produto2 = "Chiclete-Menta"
+		real preco2 = 0.5
+		inteiro quantidade2 = 5
+
+		cadeia produto3 = "Bombom-Supresa"
+		real preco3 = 1.0
+		inteiro quantidade3 = 3
+		
+		
+		caracter resposta
+
+		escreva("Conheça o novo produto ", produto, "!\n")
+		escreva("Apenas R$ ", preco, "\n")
+		
+		se (quantidade == 0) {
+			escreva("Produto esgotado!")
+		}
+		senao {
+			escreva("Temos ", quantidade, " restante(s) no estoque!\n")
+			
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual a quantidade desejada? \n")
+				inteiro quantidade_desejada
+				leia(quantidade_desejada)
+
+				se (quantidade_desejada > quantidade) {
+					escreva("Só foi possível comprar ", quantidade, " produtos.")
+					quantidade = 0
+				}
+				senao {
+					quantidade = quantidade - quantidade_desejada
+				}
+
+				escreva("Obrigada por comprar! Volte sempre!")
+			}
+		}
+
+	}
+}
+```
+
+#### Ixi! E agora?
+
+Kandy colocou novos produtos porém o programa continua rodando somente com a Bala Arco Íris. Vamos mudar a bala Arco Íris para se chamar poduto1 (preço1 e quantidade1 também) e permitir que o cliente selecione a bala que deseja comprar.
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		cadeia produto1 = "Bala Arco-íris"
+		real preco1 = 0.25
+		inteiro quantidade1 = 10
+
+		cadeia produto2 = "Chiclete-Menta"
+		real preco2 = 0.5
+		inteiro quantidade2 = 5
+
+		cadeia produto3 = "Bombom-Supresa"
+		real preco3 = 1.0
+		inteiro quantidade3 = 3
+		
+		
+		caracter resposta
+
+		escreva("Conheça o produto ", produto1, "!\n")
+		escreva("Apenas R$ ", preco1, "\n")
+
+		escreva("Conheça o produto ", produto2, "!\n")
+		escreva("Apenas R$ ", preco2, "\n")
+
+		escreva("Conheça o produto ", produto3, "!\n")
+		escreva("Apenas R$ ", preco3, "\n")
+		
+		
+		se (quantidade1 == 0) {
+			escreva("Produto ", produto1, " esgotado!")
+		}
+		se (quantidade2 == 0) {
+			escreva("Produto ", produto2, " esgotado!")
+		}
+		se (quantidade3 == 0) {
+			escreva("Produto ", produto3, " esgotado!")
+		}
+		
+		senao {
+			escreva("Temos ", quantidade1, " ", produto1, " restante(s) no estoque!\n")
+			escreva("Temos ", quantidade2, " ", produto2, " restante(s) no estoque!\n")
+			escreva("Temos ", quantidade3, " ", produto3, " restante(s) no estoque!\n")
+			
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual o produto que deseja comprar? \n")
+				escreva("Digite 1, para ", produto1, "\n")
+				escreva("Digite 2, para ", produto2, "\n")
+				escreva("Digite 3, para ", produto3, "\n")
+				inteiro produto_desejado
+				leia(produto_desejado)
+				
+				escreva("Qual a quantidade desejada? \n")
+				inteiro quantidade_desejada
+				leia(quantidade_desejada)
+
+				se (produto_desejado == 1) {
+					se (quantidade_desejada > quantidade1) {
+						escreva("Só foi possível comprar ", quantidade1, " produtos.")
+						quantidade1 = 0
+					}
+					senao {
+					quantidade1 = quantidade1 - quantidade_desejada
+					}		
+				}
+
+				se (produto_desejado == 2) {
+					se (quantidade_desejada > quantidade2) {
+						escreva("Só foi possível comprar ", quantidade2, " produtos.")
+						quantidade2 = 0
+					}
+					senao {
+					quantidade2 = quantidade2 - quantidade_desejada
+					}		
+				}
+
+				se (produto_desejado == 3) {
+					se (quantidade_desejada > quantidade3) {
+						escreva("Só foi possível comprar ", quantidade3, " produtos.")
+						quantidade3 = 0
+					}
+					senao {
+					quantidade3 = quantidade3 - quantidade_desejada
+					}		
+				}
+				
+				
+
+				escreva("Obrigada por comprar! Volte sempre!")
+			}
+		}
+
+	}
+}
+```
+
+#### Nossa! O programa ficou enorme!
+
+Uma das boas práticas de programação é evitar repetição de código. Nós, como bons programadores, queremos que o código fique mais enxuto para que outros programadores possam ler nosso código melhor!
+
+Perceba como a palavra produto, quantidade e preço ficou repetida! Temos que consertar isso! Uma possível solução é utilizar vetores. Vetores são um conjunto de caixinhas onde, geralmente, colocamos coisas com uma(s) característica(s) em comum. 
+
+Temos muitas variáveis chamadas de produto. Podemos colocar todos os nomes dos nossos produtos em um vetor chamado produto.
+
+Ficaria mais ou menos assim: produto = { "Bala Arco-íris", "Chiclete-Menta", "Bombom-Supresa"}
+
+Temos agora um vetor produto e dentro desse vetor temos nossas balas em cada caixinha. Para acessar cada caixinha do vetor usamos um número chamado de índice. 
+
+Exemplo: produto[1] deve retornar "Chiclete-Menta"! Ixi! Mas não deveria retonar "Bala Arco-íris"? Todos os vetores começam com posição zero. Logo "Bala Arco-íris" corresponde a produto[0].
+
+Quais outras variáveis podemos colocar em caixinhas no nosso mercadinho? Preço e quantidade!
+
+Então agora temos 3 vetores em nosso programa:
+
+produto = { "Bala Arco-íris", "Chiclete-Menta", "Bombom-Supresa"}
+quantidade = { 10, 5, 3 }
+preco = {0.25, 0.5, 1}
+
+Como sabemos que a quantidade 10 é referente à "Bala Arco-íris"? Simples, podemos usar o número da caixinha (que chamaremos agora de posição. Logo quantidade[0] é a quantidade de produto[0] com preco[0]!
+
+Colocando isso em nosso programa:
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		
+		cadeia produto[3] = {"Bala Arco-íris", "Chiclete-Menta", "Bombom-Supresa" }
+		real preco[3] = { 0.25, 0.5, 1.0 }
+		inteiro quantidade[3] = {10, 5, 3}
+		
+		caracter resposta
+
+		escreva("Conheça o produto ", produto[0], "!\n")
+		escreva("Apenas R$ ", preco[0], "\n")
+
+		escreva("Conheça o produto ", produto[1], "!\n")
+		escreva("Apenas R$ ", preco[1], "\n")
+
+		escreva("Conheça o produto ", produto[2], "!\n")
+		escreva("Apenas R$ ", preco[2], "\n")
+		
+		
+		se (quantidade[0] == 0) {
+			escreva("Produto ", produto[0], " esgotado!")
+		}
+		se (quantidade[1] == 0) {
+			escreva("Produto ", produto[1], " esgotado!")
+		}
+		se (quantidade[2] == 0) {
+			escreva("Produto ", produto[2], " esgotado!")
+		}
+		
+		senao {
+			escreva("Temos ", quantidade[0], " ", produto[0], " restante(s) no estoque!\n")
+			escreva("Temos ", quantidade[1], " ", produto[1], " restante(s) no estoque!\n")
+			escreva("Temos ", quantidade[2], " ", produto[2], " restante(s) no estoque!\n")
+			
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual o produto que deseja comprar? \n")
+				escreva("Digite 1, para ", produto[0], "\n")
+				escreva("Digite 2, para ", produto[1], "\n")
+				escreva("Digite 3, para ", produto[2], "\n")
+				inteiro produto_desejado
+				leia(produto_desejado)
+				
+				escreva("Qual a quantidade desejada? \n")
+				inteiro quantidade_desejada
+				leia(quantidade_desejada)
+
+				se (produto_desejado == 1) {
+					se (quantidade_desejada > quantidade[0]) {
+						escreva("Só foi possível comprar ", quantidade[0], " produtos.")
+						quantidade[0] = 0
+					}
+					senao {
+					quantidade[0] = quantidade[0] - quantidade_desejada
+					}		
+				}
+
+				se (produto_desejado == 2) {
+					se (quantidade_desejada > quantidade[1]) {
+						escreva("Só foi possível comprar ", quantidade[1], " produtos.")
+						quantidade[1] = 0
+					}
+					senao {
+					quantidade[1] = quantidade[1] - quantidade_desejada
+					}		
+				}
+
+				se (produto_desejado == 3) {
+					se (quantidade_desejada > quantidade[2]) {
+						escreva("Só foi possível comprar ", quantidade[2], " produtos.")
+						quantidade[2] = 0
+					}
+					senao {
+					quantidade[2] = quantidade[2] - quantidade_desejada
+					}		
+				}
+
+				escreva("Obrigada por comprar! Volte sempre!")
+			}
+		}
+
+	}
+}
+```
+
+## Loops
+
 
 #### Desconto para grandes quantidades
 
