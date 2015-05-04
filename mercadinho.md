@@ -551,7 +551,7 @@ programa
 				inteiro produto_desejado
 				leia(produto_desejado)
 				
-				escreva("Qual a quantidade desejada? \n")
+		 		escreva("Qual a quantidade desejada? \n")
 				inteiro quantidade_desejada
 				leia(quantidade_desejada)
 
@@ -595,6 +595,57 @@ programa
 
 ## Loops
 
+#### O programa continua grande
+
+Temos vários códigos repetidos. E se tivessemos uma forma de repetir um mesmo código várias vezes, com condições diferentes?
+
+```
+programa 
+{
+	funcao inicio() 
+	{
+
+		cadeia produto[3] = {"Bala Arco-íris", "Chiclete-Menta", "Bombom-Supresa" }
+		real preco[3] = { 0.25, 0.5, 1.0 }
+		inteiro quantidade[3] = {10, 5, 3}
+
+		caracter resposta
+			
+		para (inteiro contador = 0; contador < 3; contador++)
+		{
+			escreva("Conheça o produto ", produto[contador], "!\n")
+			escreva("Apenas R$ ", preco[contador], "\n")
+			se (quantidade[contador] == 0) {
+				escreva("Produto ", produto[contador], " esgotado!")
+			}
+			senao {
+				escreva("Temos ", quantidade[contador], " ", produto[contador], " restante(s) no estoque!\n")
+				
+				escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+				leia(resposta)
+	
+				se (resposta == 'S') {
+					escreva("Qual a quantidade desejada? \n")
+					inteiro quantidade_desejada
+					leia(quantidade_desejada)
+	
+					se (quantidade_desejada > quantidade[contador]) {
+						escreva("Só foi possível comprar ", quantidade[contador], " produtos.")
+						quantidade[contador] = 0
+					}
+					senao {
+						quantidade[contador] = quantidade[contador] - quantidade_desejada
+					}		
+				}
+				escreva("Obrigada por comprar! \n")
+			}
+		}
+		escreva("Volte sempre! \n")
+	}
+}
+
+
+```
 
 #### Desconto para grandes quantidades
 
