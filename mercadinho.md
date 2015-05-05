@@ -520,87 +520,101 @@ programa
 {
 	funcao inicio ()
 	{
-		
 		cadeia produto[3] = {"Bala Arco-íris", "Chiclete-Menta", "Bombom-Supresa" }
 		real preco[3] = { 0.25, 0.5, 1.0 }
 		inteiro quantidade[3] = {10, 5, 3}
+
+		inteiro quantidade_desejada
 		
 		caracter resposta
 
-		escreva("Conheça o produto ", produto[0], "!\n")
+		escreva("Conheça o novo produto ", produto[0], "!\n")
 		escreva("Apenas R$ ", preco[0], "\n")
 
-		escreva("Conheça o produto ", produto[1], "!\n")
-		escreva("Apenas R$ ", preco[1], "\n")
-
-		escreva("Conheça o produto ", produto[2], "!\n")
-		escreva("Apenas R$ ", preco[2], "\n")
-		
-		
 		se (quantidade[0] == 0) {
-			escreva("Produto ", produto[0], " esgotado!")
+			escreva("Produto esgotado!")
 		}
-		se (quantidade[1] == 0) {
-			escreva("Produto ", produto[1], " esgotado!")
-		}
-		se (quantidade[2] == 0) {
-			escreva("Produto ", produto[2], " esgotado!")
-		}
-		
 		senao {
-			escreva("Temos ", quantidade[0], " ", produto[0], " restante(s) no estoque!\n")
-			escreva("Temos ", quantidade[1], " ", produto[1], " restante(s) no estoque!\n")
-			escreva("Temos ", quantidade[2], " ", produto[2], " restante(s) no estoque!\n")
+			escreva("Temos ", quantidade[0], " restante(s) no estoque!\n")
+
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual a quantidade desejada? \n")
+				leia(quantidade_desejada)
+
+				se (quantidade_desejada > quantidade[0]) {
+					escreva("Só foi possível comprar ", quantidade[0], " produtos.")
+					quantidade[0] = 0
+				}
+				senao {
+					quantidade[0] = quantidade[0] - quantidade_desejada
+				}
+
+				escreva("Obrigada por comprar!\n")
+			}
+		}
+
+		
+		escreva("Conheça o novo produto ", produto[1], "!\n")
+		escreva("Apenas R$ ", preco[1], "\n")
+		
+		se (quantidade[1] == 0) {
+			escreva("Produto esgotado!")
+		}
+		senao {
+			escreva("Temos ", quantidade[1], " restante(s) no estoque!\n")
 			
 			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
 			leia(resposta)
 
 			se (resposta == 'S') {
-				escreva("Qual o produto que deseja comprar? \n")
-				escreva("Digite 1, para ", produto[0], "\n")
-				escreva("Digite 2, para ", produto[1], "\n")
-				escreva("Digite 3, para ", produto[2], "\n")
-				inteiro produto_desejado
-				leia(produto_desejado)
-				
-		 		escreva("Qual a quantidade desejada? \n")
-				inteiro quantidade_desejada
+				escreva("Qual a quantidade desejada? \n")
 				leia(quantidade_desejada)
 
-				se (produto_desejado == 1) {
-					se (quantidade_desejada > quantidade[0]) {
-						escreva("Só foi possível comprar ", quantidade[0], " produtos.")
-						quantidade[0] = 0
-					}
-					senao {
-					quantidade[0] = quantidade[0] - quantidade_desejada
-					}		
+				se (quantidade_desejada > quantidade[1]) {
+					escreva("Só foi possível comprar ", quantidade[1], " produtos.")
+					quantidade[1] = 0
 				}
-
-				se (produto_desejado == 2) {
-					se (quantidade_desejada > quantidade[1]) {
-						escreva("Só foi possível comprar ", quantidade[1], " produtos.")
-						quantidade[1] = 0
-					}
-					senao {
+				senao {
 					quantidade[1] = quantidade[1] - quantidade_desejada
-					}		
 				}
 
-				se (produto_desejado == 3) {
-					se (quantidade_desejada > quantidade[2]) {
-						escreva("Só foi possível comprar ", quantidade[2], " produtos.")
-						quantidade[2] = 0
-					}
-					senao {
-					quantidade[2] = quantidade[2] - quantidade_desejada
-					}		
-				}
-
-				escreva("Obrigada por comprar! Volte sempre!")
+				escreva("Obrigada por comprar!\n")
 			}
 		}
 
+
+		escreva("Conheça o novo produto ", produto[2], "!\n")
+		escreva("Apenas R$ ", preco[2], "\n")
+
+		se (quantidade[2] == 0) {
+			escreva("Produto esgotado!")
+		}
+		senao {
+			escreva("Temos ", quantidade[2], " restante(s) no estoque!\n")
+
+			escreva("Digite S para comprar ou qualquer outra coisa pra sair.\n")
+			leia(resposta)
+
+			se (resposta == 'S') {
+				escreva("Qual a quantidade desejada? \n")
+				leia(quantidade_desejada)
+
+				se (quantidade_desejada > quantidade[2]) {
+					escreva("Só foi possível comprar ", quantidade[2], " produtos.")
+					quantidade[2] = 0
+				}
+				senao {
+					quantidade[2] = quantidade[2] - quantidade_desejada
+				}
+
+				escreva("Obrigada por comprar!\n")
+			}
+		}
+
+		escreva("Volte sempre!\n")
 	}
 }
 ```
@@ -658,6 +672,8 @@ programa
 
 
 ```
+
+#### Total da compra
 
 #### Desconto para grandes quantidades
 
