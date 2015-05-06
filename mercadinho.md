@@ -50,6 +50,7 @@ programa
 }
 ```
 
+
 #### Indicar um produto
 
 Um novo produto surgiu nas prateleiras e Kandy gostaria de poder indicar para todos que entrassem na loja.
@@ -67,6 +68,18 @@ programa
 	}
 }
 ```
+
+**Um pouco mais sobre variáveis**
+
+Variáveis são nomes que damos as coisas para ficar mais fácil de reconhecê-las. Toda variável possui um tipo.
+Existem os seguintes tipos:
+* cadeia que significa que a variável é do tipo texto (mais pra frente você entenderá o porquê deste nome estranho),
+* inteiro para números (1,2,3...)
+* real para números quebrados (1.5, 2.2...)
+
+Os tipo acima podem ter outros nomes quando se trabalha com outras ferramentas de programação (como por exemplo cadeia pode ser String e etc...).
+
+Existem outros tipos mas os acima são os principais! No nosso programa acima, produto é uma variável!
 
 #### Preço do novo produto
 
