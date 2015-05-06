@@ -30,6 +30,7 @@ programa
 }
 ```
 
+
 #### Seja bem vindo(a), João!
 
 As boas vindas fizeram um sucesso com os clientes! Mas mesmo assim, Kandy recebeu algumas reclamações dizendo que o atendimento era muito impessoal. Ela gostaria que fosse possível saudar os clientes com o nome deles.
@@ -49,6 +50,7 @@ programa
 	}
 }
 ```
+
 
 
 #### Indicar um produto
@@ -72,14 +74,18 @@ programa
 **Um pouco mais sobre variáveis**
 
 Variáveis são nomes que damos as coisas para ficar mais fácil de reconhecê-las. Toda variável possui um tipo.
+
 Existem os seguintes tipos:
-* cadeia que significa que a variável é do tipo texto (mais pra frente você entenderá o porquê deste nome estranho),
-* inteiro para números (1,2,3...)
-* real para números quebrados (1.5, 2.2...)
+
+* **cadeia** que significa que a variável é do tipo texto (mais pra frente você entenderá o porquê deste nome estranho),
+* **inteiro** para números (1,2,3...)
+* **real** para números quebrados (1.5, 2.2...)
 
 Os tipo acima podem ter outros nomes quando se trabalha com outras ferramentas de programação (como por exemplo cadeia pode ser String e etc...).
 
-Existem outros tipos mas os acima são os principais! No nosso programa acima, produto é uma variável!
+Existem outros tipos mas os acima são os principais! No nosso programa acima, **produto é uma variável!**
+
+
 
 #### Preço do novo produto
 
@@ -98,7 +104,20 @@ programa
 		escreva("Apenas R$ ", preco)
 	}
 }
+
 ```
+
+**O que é esse \n?**
+
+No código acima podemos notar um \n. Em uma frase, o \n é um símbolo que representa a quebra de linha. Sem este símbolo todas as instruções *escreva* apareceriam juntas.
+
+*Exemplo sem quebra de linha:* Conheço novo produtoApenas R$ 2,00
+
+*Exemplo com quebra de linha (\n):*
+
+Conheço novo produto
+
+Apenas R$ 2,00
 
 #### Estoque de Bala Arco-íris
 
