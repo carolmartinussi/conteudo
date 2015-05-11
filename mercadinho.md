@@ -195,6 +195,60 @@ programa
 }
 ```
 
+**= VS ==**
+
+Podemos notar acima que quando checamos se o usuário apertou S fazemos isso comparando se reposta == "S". Porém utilizados um sinal de "=" quando estamos dizendo que produto = "Bala de Arco-íris". Qual a diferença?
+
+O == é sempre utilizado para operações de comparação, enquanto o = é utilizado para operações de atribuição, você quer que uma variável tenha um valor, por exemplo.
+
+**Um pouco sobre comparação**
+
+Nos exemplo acima estamos usando uma operação no *se* para saber se uma coisa é igual a outra.
+
+* Quando o computador identifica coisas iguais ele responde **true** (verdadeiro em inglês).
+
+* Quando o computador identifica coisas diferentes ele responde **false** (falso em inglês)
+
+Então se (reposta == 'S') o computador vai analisar essa expressão e vai entender que ela é true e vai entrar no bloco desejado.
+
+Salve seu programa e vamos abrir outro!! Vamos criar duas variáveis! 
+
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		inteiro numeroUm = 1
+		inteiro numeroDois = 2
+		escreva(numeroUm == numeroDois)
+	}
+}
+```
+
+Perceba que o programa mostrou como saída o resultado **False ou Falso**. Dizendo que os números não são iguais.
+
+Se substituirmos o valor 2 no programa acima por 2 teremos o resultado **True ou Verdadeiro)**.
+
+**E se quero testar se duas coisas são diferentes?**
+
+No exemplo acima estamos testando igualdade. E se queremos comparar se duas coisas são diferentes? Utiliza-se a mesma lógica aplicada acima só que o símbolo de diferente é !=
+
+```
+programa
+{
+	funcao inicio ()
+	{
+		inteiro numeroUm = 1
+		inteiro numeroDois = 2
+		escreva(numeroUm != numeroDois)
+	}
+}
+```
+Veja que quando estamos testando se variáveis são iguais este exemplo dá Falso, porém se estou testando se 1 e 2 são diferentes, o resultado é verdadeiro.
+
+
+ 
 #### Isso dá muito trabalho!
 
 Todas as vezes que um cliente compra uma bala, Kandy tem que mudar o valor da quantidade em estoque. Ela gostaria de saber se é possível que o estoque se atualizasse automaticamente.
@@ -224,12 +278,6 @@ programa
 	}
 }
 ```
-**= VS ==**
-
-Podemos notar acima que quando checamos se o usuário apertou S fazemos isso comparando se reposta == "S". Porém utilizados um sinal de "=" quando estamos dizendo que produto = "Bala de Arco-íris". Qual a diferença?
-
-O == é sempre utilizado para operações de comparação, enquanto o = é utilizado para operações de atribuição, você quer que uma variável tenha um valor, por exemplo.
-
 
 
 #### Produto esgotado!
