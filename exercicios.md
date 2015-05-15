@@ -2,6 +2,7 @@
 
 Esse documento serve para dar idéias de exercicíos que podem ser propostos. Junto com o mercadinho.md estes servem para os alunos fixarem o conteúdo.
 
+## Entrada e Saída
 
 #### Escreva na tela
 
@@ -35,6 +36,9 @@ Sem quebra de linha!!!
 
 Escreva as mesmas frases agora com quebra de linha!
 
+
+## Condições
+
 #### Programe um menu de comida
 
 Utilize o que aprendeu agora e faça um menu onde o usuário possa escolher o que comer
@@ -42,9 +46,8 @@ Utilize o que aprendeu agora e faça um menu onde o usuário possa escolher o qu
 #### Comparando coisas
 
 
+## Vetores
 
+## Loops
 
-
-
-
-
+## Ciclos
